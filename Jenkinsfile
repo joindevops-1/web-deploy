@@ -32,7 +32,7 @@ pipeline {
             steps{
                 sh """
                 cd terraform
-                terraform plan -var-file=${params.environment}/${params.environment}.tfvars -var="app_version=${params.version}" -var="environment=${params.environment}"
+                terraform plan  -var="app_version=${params.version}" -var="environment=${params.environment}"
                 """
             }
         }
